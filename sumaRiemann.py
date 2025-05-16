@@ -11,7 +11,6 @@ expr = input("¿Cuál es la funcion que quieres integrar?\npor ejemplo: E**(-x**
 p = (b - a)/n #calculamos las particiones
 s = 0 #iniciamos la suma en 0
 
-
 f = lambdify(x, expr) #convertimos la expresion en una funcion usable en python
 
 for i in range(n): #calculamos la suma de la altura de todos los rectangulos
