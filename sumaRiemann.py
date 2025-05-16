@@ -6,7 +6,7 @@ import numpy as np
 a = float(input("¿En donde empieza la integral?\n"))
 b = float(input("¿En donde termina la integral?\n"))
 n = int(input("¿Cuántas particiones?\n"))
-expr = input("¿Cuál es la funcion que quieres integrar?\npor ejemplo: E**(-x**2)\n")
+expr = sympy.Symbol(input("¿Cuál es la funcion que quieres integrar?\npor ejemplo: x**2 + 5\n"))
 
 p = (b - a)/n #calculamos las particiones
 s = 0 #iniciamos la suma en 0
@@ -14,9 +14,9 @@ s = 0 #iniciamos la suma en 0
 f = lambdify(x, expr) #convertimos la expresion en una funcion usable en python
 
 for i in range(n): #calculamos la suma de la altura de todos los rectangulos
-    s += f(a + p*i )
+    s += f(a + p * i)
 
-I = s*p #multiplicamos la suma de las alturas por el ancho de cada rectangulo, para tener el valor de la suma de Riemann
+I = s * p #multiplicamos la suma de las alturas por el ancho de cada rectangulo, para tener el valor de la suma de Riemann
 
 print(f"la suma de Riemann de la función {expr}, de {a} a {b} con {n} particiones da igual a {I}")
 
