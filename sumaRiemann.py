@@ -3,8 +3,8 @@ from sympy.abc import x
 import matplotlib.pyplot as plt
 import numpy as np
 
-a = int(input("¿En donde empieza la integral?\n"))
-b = int(input("¿En donde termina la integral?\n"))
+a = float(input("¿En donde empieza la integral?\n"))
+b = float(input("¿En donde termina la integral?\n"))
 n = int(input("¿Cuántas particiones?\n"))
 expr = input("¿Cuál es la funcion que quieres integrar?\npor ejemplo: E**(-x**2)\n")
 
@@ -18,7 +18,7 @@ for i in range(n): #calculamos la suma de la altura de todos los rectangulos
 
 I = s*p #multiplicamos la suma de las alturas por el ancho de cada rectangulo, para tener el valor de la suma de Riemann
 
-print(f"la suma de Riemann de la función {expr}, que inicia en {a} y termina en {b}, con {n} particiones da igual a {I}")
+print(f"la suma de Riemann de la función {expr}, de {a} a {b} con {n} particiones da igual a {I}")
 
 fig, ax = plt.subplots() #inicializamos el gráfico
 z = np.linspace(a,b,1000) #El dominio para graficar la función
